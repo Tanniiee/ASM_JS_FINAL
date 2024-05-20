@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <a href="#" class="logo">
+          <i class="fa-solid fa-paw"></i> T-<span>Pets</span> 
+        </a>
+        
+        <ul class="navbar">
+            <li><a href="index.html" >
+                <i class="fa-solid fa-house"></i>HOME</a>
+            </li>   
+            <li><a href="discount.html" >
+              <i class="fa-solid fa-tag"></i>DISCOUNT</a>
+            </li>
+            <li><a href="product.html" >
+              <i class="fa-brands fa-opensuse"></i> PRODUCTS  </a>
+            </li>
+            <li><a href="connect.html" >
+                <i class="fa-regular fa-envelope"></i>CONNECT</a>
+            </li>
+            
+          </ul>
+         
+        <div class="h-right">
+          <!-- Search buton -->
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <!-- login button -->
+          <a href="login.html"> <i class="fa-regular fa-user"></i></a>
+          <!-- Theme button -->
+          <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+           </header>
+
+    <div class="container">
+        <div class="main-box">
+            <h1>Log In</h1>
+            <form action="">
+                <div class="input-box">
+                    <span class="icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+
+            <div class="input-box">
+                <span class="icon">
+                    <i class="fa-solid fa-lock"></i>
+                </span>
+                <input  type="password" required>
+                <label>Pasword</label>
+            </div>
+
+            <div class="check">
+                <label> <input type="checkbox">Remember me</label>
+                <a href="#">Forget Password</a>
+            </div>
+
+            <button type="submit" class="btn">Login</button>
+
+            <div class="register">
+                <p>
+                    Don't have an account?
+                    <a href="signUp.html" class="register-link">Sign Up!</a>
+                </p>
+            </div>
+        </form>
+        </div>
+    </div>
+
+   
+</body>
+<script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+<script src="jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+    $("#menu-icon").click(function() {
+        $(".navbar").toggleClass("open");
+    });
+    });
+    </script>
+</html>

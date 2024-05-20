@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETAIL</title>
+</head>
+<link rel="stylesheet" href="bootstrap-5.3.2-dist/bootstrap-5.3.2-dist/css/bootstrap.css">
+<link rel="stylesheet" href="css/detail.css">
+<body>
+  <!-- header -->
+   <header>
+<a href="#" class="logo">
+  <i class="fa-solid fa-paw"></i> T-<span>Pets</span> 
+</a>
+<div class="nav">
+<ul class="navbar">
+    <li><a href="index.html" >
+        <i class="fa-solid fa-house"></i>HOME</a>
+    </li>   
+    <li><a href="discount.html" >
+      <i class="fa-solid fa-tag"></i>DISCOUNT</a>
+    </li>
+    <li><a href="product.html" >
+      <i class="fa-brands fa-opensuse"></i> PRODUCTS  </a>
+    </li>
+    <li><a href="connect.html" >
+        <i class="fa-regular fa-envelope"></i>CONNECT</a>
+    </li>
+    
+  </ul>
+</div>
+<div class="h-right">
+  <!-- Search buton -->
+  <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+  <!-- login button -->
+  <a href="login.html"> <i class="fa-regular fa-user"></i></a>
+  <!-- Theme button -->
+  <a href="#"> <i class="fa-solid fa-bag-shopping"></i></a>
+  <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+</div>
+   </header>
+
+   <div class="flex-box">
+    <div class="left">
+        <div class="big-img">
+            <img src="img/dt5.jpg">
+        </div>
+        <div class="images">
+            <div class="small-img">
+                <img src="img/dt1.jpg" onclick="showImg(this.src)">
+            </div>
+            <div class="small-img">
+                <img src="img/dt2.jpg" onclick="showImg(this.src)">
+            </div>
+            <div class="small-img">
+                <img src="img/dt3.jpg" onclick="showImg(this.src)">
+            </div>
+            <div class="small-img">
+                <img src="img/dt4.jpg" onclick="showImg(this.src)">
+            </div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="url">Home > Product > Cats</div>
+        <div class="pname">British long-haired cat</div>
+        <div class="ratings">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+        <div class="price">$269</div>
+        <div class="size">
+            <p>Gender: </p>
+            <div class="psize active">Male</div>
+            <div class="psize">Female</div>
+        </div>
+        <div class="quantity">
+            <p>Quantity :</p>
+            <input type="number" min="1" max="5" value="1">
+        </div>
+        <div class="btn-box">
+            <button class="cart-btn">Add to Cart</button>
+            <button class="buy-btn">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<!-- describe -->
+<h2 style="margin-left: 150px; color: #ffa343;">Describe:</h2>
+<div class="describe">
+
+    
+    <span  style="display: flex; justify-content: center; align-items: center; height: 100px;">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis illo reiciendis laudantium obcaecati officiis consequuntur. Autem beatae reiciendis ad officia nemo quaerat laudantium facilis aspernatur unde, ipsa iure fugiat? Laudantium!. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium voluptate, quo mollitia dicta vero corrupti sed odio omnis, illum ducimus eos perferendis nostrum itaque cupiditate velit facilis adipisci culpa inventore!
+    maiores tempora pariatur esse numquam porro ullam beatae nobis facilis, nulla laborum dolorem explicabo veniam quia voluptatum. Possimus quia debitis ab error eius a aliquam, rem et repellendus?
+    Doloremque possimus, libero pariatur nihil eius nam itaque explicabo maiores consequatur in officia odit perferendis? Eligendi non, alias aperiam numquam eveniet culpa autem molestiae consequatur cumque commodi ratione sint atque.
+    inventore ab, quisquam nemo tempora porro repellendus officiis dolorum ut eveniet! Facilis excepturi eaque dignissimos amet quasi blanditiis accusantium id, rem ratione perferendis voluptates atque libero dolorum cum error?
+    Voluptates omnis ex natus maxime enim expedita a facilis. Laboriosam magni veritatis expedita iusto ipsum molestias velit itaque quis placeat accusamus. Labore ut officiis distinctio impedit ipsum blanditiis iure placeat!
+    dicta explicabo veritatis, dolorem quo eaque saepe nulla nobis cumque neque non aspernatur velit rem ea ipsam ratione aliquid ducimus illo ab molestiae. Quidem, libero temporibus!</span>
+</div>
+   
+<!-- New product -->
+
+<section class="newProduct">
+<div class="center-text">
+  <h2 style="color: #ffa343;">The same Product</h2>
+</div>
+
+<div class="newProduct-content">
+  <div class="box">
+    <img src="img/dog5.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+  <div class="box">
+    <img src="img/bo4.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+  <div class="box">
+    <img src="img/cat3.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+  <div class="box">
+    <img src="img/kyda2.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+  
+  <div class="box">
+    <img src="img/bo1.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+  
+  <div class="box">
+    <img src="img/dog2.webp" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+
+  <div class="box">
+    <img src="img/habit3.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+
+  <div class="box">
+    <img src="img/soc2.webp" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  
+</div>
+
+<div class="box">
+    <img src="img/cat3.jpg" alt="">
+    <h4>Teacup</h4>
+    <h6>Gender: Male|Female</h6>
+    <div class="piece">
+      Picece: 269$
+    </div>
+    <a href="detail.html" class="btn">Detail</a>
+  </div>
+  
+</div>
+</div>
+
+
+<div class="newProduct-content">
+    <div class="box">
+      <img src="img/dog5.jpg" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+    <div class="box">
+      <img src="img/bo4.jpg" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+    <div class="box">
+      <img src="img/cat3.jpg" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+    <div class="box">
+      <img src="img/kyda2.jpg" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+    
+    <div class="box">
+      <img src="img/bo1.jpg" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+    
+    <div class="box">
+      <img src="img/dog2.webp" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+  
+    <div class="box">
+      <img src="img/habit3.jpg" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    </div>
+  
+    <div class="box">
+      <img src="img/soc2.webp" alt="">
+      <h4>Teacup</h4>
+      <h6>Gender: Male|Female</h6>
+      <div class="piece">
+        Picece: 269$
+      </div>
+      <a href="detail.html" class="btn">Detail</a>
+    
+  </div>
+  </div>
+
+<div class="center-btn">
+  <a href="detail.html" class="btn">See More</a>
+</div>
+</section>
+
+<!-- Notification -->
+<section class="notification">
+  <div class="notification-content">
+    <div class="notification-text">
+      <h2>Ready to own a pet?</h2>
+      <p>
+        Come to our store and enjoy wonderful moments with your new pets!
+      </p>
+    </div>
+    <form action="">
+    <input type="email" placeholder="Enter your email..." required>
+    <input type="submit" value="Get started" class="btn">
+  </form>
+  </div>
+</section>
+
+<!-- footer -->
+<section class="footer">
+  <div class="footer-box">
+    <h3>Service</h3>
+    <a href="#">Email Marketing</a>
+    <a href="#">Campaings</a>
+    <a href="#">Brandings</a>
+    <a href="#">Offline</a>
+  </div>
+
+  <div class="footer-box">
+    <h3>About</h3>
+    <a href="#">Our story</a>
+    <a href="#">Benefits</a>
+    <a href="#">Team</a>
+    <a href="#">Careers</a>
+  </div>
+
+  <div class="footer-box">
+    <h3>Help</h3>
+    <a href="#">FAQs</a>
+    <a href="#">Contact us</a>
+  </div>
+
+  <div class="footer-box">
+    <h3>Social</h3>
+    <div class="social">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+    </div>
+    
+  </div>
+
+</section>
+
+<!-- copyright -->
+<div class="copyright">
+  <p>&copy; Copyright 2023 by Tannie</p>
+</div>
+</body>
+<script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+<scrip src="bootstrap-5.3.2-dist/bootstrap-5.3.2-dist/js/bootstrap.bundle.js"></scripsrc>
+  <script src="jquery-3.7.1.min.js"></script>
+  <script>
+    let bigImg = document.querySelector('.big-img img');
+        function showImg(pic){
+            bigImg.src = pic;
+        }
+    $(document).ready(function() {
+    $("#menu-icon").click(function() {
+        $(".navbar").toggleClass("open");
+    });
+    });
+    $(document).ready(function() {
+      var header = $('header');
+      var stickyHeaderTop = header.offset().top;
+
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > stickyHeaderTop) {
+          header.addClass('sticky');
+        } else {
+          header.removeClass('sticky');
+        }
+      });
+    });
+  </script>
+</html>
