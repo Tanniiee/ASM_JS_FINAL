@@ -1,0 +1,257 @@
+
+
+body{
+    background-color: var(--bg-color);
+    font-family: system-ui;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url(../img/bnpro.png);
+    background-size: cover;
+    background-position: center;
+}
+:root{
+    --text-color:#fff;
+    --bg-color: #000;
+    --main-color:#ffa343;
+
+    --h1-font: 4.6rem;
+    --h2-font: 2.8rem;
+    --p-font: 15px;
+}
+.container{
+    width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+}
+header{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+header .shopping{
+    position: relative;
+    text-align: right;
+}
+header .shopping img{
+    width: 40px;
+}
+header .shopping span{
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    left: 80%;
+    padding: 3px 10px;
+}
+.list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+.list .item{
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 50px 50px #757676;
+    letter-spacing: 1px;
+}
+.list .item img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.list .item .title{
+    font-weight: 600;
+}
+.list .item .price{
+    margin: 10px;
+}
+.list .item button{
+    margin-left: 20px;
+    display: inline-block;
+    padding: 20px 4 0px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all .50s ease;
+    cursor: pointer;
+}
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 400px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: 0.5s;
+}
+.active .card{
+    left: calc(100% - 400px);
+}
+.active .container{
+   transform: translateX(-200px);
+}
+.card h1{
+    color: #E8BC0E;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkOut{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+.card .checkOut div{
+    background-color: #E8BC0E;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkOut div:nth-child(2){
+    background-color: #1C1F25;
+    color: #fff;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3, 1fr);
+    color: #fff;
+    row-gap: 10px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard li button{
+    background-color: #fff5;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
+.notification-content{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.list .item button:hover{
+    transform: translateX(10px);
+    border: 2px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+}
+.notification-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap:2rem;
+}
+.notification-text h2{
+    font-size: var(--h2-font);
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+.notification-text p{
+font-size: var(--p-font);
+font-weight: 500;
+color: #ffffffab;
+}
+.notification-content form{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap:1rem;
+}
+.notification-content form input:first-child{
+    padding: 15px;
+    background: #202020;
+    font-size: var(--p-font);
+    color: var(--text-color);
+    border-radius: 5px;
+}
+.footer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    gap:2rem;
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+}
+.footer-box h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.footer-box a{
+    text-decoration: none;
+    color: #979797;
+    margin-bottom: 0.8rem;
+    transition: all .50s ease;
+}
+.footer-box a:hover{
+    transform: translateX(-5px);
+    color: var(--text-color);
+}
+.social a{
+display: inline-flex;
+align-items: center;
+justify-content: center;
+height: 45px;
+width: 45px;
+background: #202020;
+color: var(--text-color);
+font-size: 20px;
+border-radius: 50%;
+margin-right: 8px;
+transition: transform 0.6s;
+}
+.social a:hover{
+    background: var(--main-color);
+    color: var(--bg-color);
+    transform: translateX(-4px);
+}
+.copyright p{
+    text-align: center;
+    padding: 20px;
+    color: #979797;
+    font-size: 15px;
+}
+.btn{
+    display: inline-block;
+    padding: 13px 4 0px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-size: 15px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all .50s ease;
+    cursor: pointer;
+
+}
+.btn:hover{
+    transform: translateX(10px);
+    border: 2px solid var(--text-color);
+    background: transparent;
+    color: var(--text-color);
+}

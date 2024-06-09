@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGN UP</title>
     <link rel="stylesheet" href="css/signUp.css">
+    <style>
+        #form1 #baoloi{ margin: 0px auto; color: red}
+
+        #form1 .loi {
+            border:1px solid red;  background-color:yellow;
+        }
+        #form1 .loi-fieldset {
+            border: 1px solid red; background-color: yellow;
+        }
+
+    </style>
 </head>
 <body>
     <!-- header -->
@@ -43,41 +54,64 @@
     <div class="container">
         <div class="main-box">
             <h1>Sign Up</h1>
-            <form action="">
+            <form id="form1">
+                <div class="input-box">
+                    <span class="icon">
+                    </span>
+                    <input id="hoten" type="text" required>
+                    <label>Họ và tên</label>
+                </div>
                 <div class="input-box">
                     <span class="icon">
                         <i class="fa-solid fa-envelope"></i>
                     </span>
-                    <input type="email" required>
+                    <input id="email" type="email" required>
                     <label>Email</label>
                 </div>
-
-            <div class="input-box">
-                <span class="icon">
-                    <i class="fa-solid fa-lock"></i>
-                </span>
-                <input  type="password" required>
-                <label>Pasword</label>
-            </div>
-
-            <div class="input-box">
-                <span class="icon">
-                    <i class="fa-solid fa-lock"></i>
-                </span>
-                <input  type="password" required>
-                <label>Confirn Pasword</label>
-            </div>
-
-
-            <button type="submit" class="btn">Sign Up</button>
-
-            <div class="register">
-                <p>
-                    Do have an account?
-                    <a href="login.html" class="register-link">Login</a>
+                
+                <p style="margin-bottom: 20px;">       
+                    <fieldset id="fs1">
+                        <legend>Giới tính</legend>
+                        <input type="radio" name="phai" value="Nam"><label>Nam</label>
+                        <input type="radio" name="phai" value="Nữ"><label>Nữ</label><br>
+                    </fieldset>
                 </p>
-            </div>
-        </form>
+                <p style="margin-bottom: 20px;">          
+                    <fieldset id="fs2">
+                        <legend>Sở thích</legend>
+                        <input type="checkbox" name="st"><label>Đọc sách</label>
+                        <input type="checkbox" name="st"><label>Du lịch</label>
+                        <input type="checkbox" name="st"><label>Ẩm thực</label>
+                        <input type="checkbox" name="st"><label>Âm nhạc</label>
+                        <input type="checkbox" name="st"><label>Khác</label>
+                    </fieldset>
+                </p>
+                <p style="margin-bottom: 20px; margin-top: 20px;">
+                    <label>Quốc tịch</label><br>             
+                    <select id="quoctich" class="txt">
+                        <option value="0">Chọn quốc tịch</option>
+                        <option value="1">Việt Nam</option>
+                        <option value="2">Mỹ</option>
+                        <option value="3">Campuchia</option>
+                    </select>
+                </p>
+                <div class="input-box">
+                    <span class="icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input  id="Pasword" type="password" required>
+                    <label>Pasword</label>
+                </div> 
+                <div class="input-box">
+                    <span class="icon">
+                        <i class="fa-solid fa-lock"></i>
+                    </span>
+                    <input id="PaswordConfirm" type="password" required>
+                    <label>Pasword Confirm</label>
+                </div>
+                <div id="baoloi"></div>
+                <button type="button" onclick="return kiemtra();" class="btn" id="dangki">Đăng kí</button>
+            </form>    
         </div>
     </div>
 
@@ -91,5 +125,107 @@
         $(".navbar").toggleClass("open");
     });
     });
+    function kiemtra(){
+        var loi = "";  
+
+        // kiểm tra họ và tên 
+        var hoten = document.getElementById("hoten");
+        if(hoten.value.length == 0){
+            hoten.className = "loi";
+            loi += "Họ và tên không được bỏ trống<br>";
+        } else if(hoten.value.length > 30){
+            hoten.className = "loi";
+            loi += "Họ và tên không được quá 30 ký tự<br>";
+        } else {
+            hoten.className = "txt";
+        }
+
+        // kiểm tra email
+        var email = document.getElementById("email");
+        if(email.value.length == 0){
+            email.className = "loi";
+            loi += "Email không được bỏ trống<br>";
+        } else {
+            email.className = "txt";
+        }
+        // kiểm tra Pasword
+        var Pasword = document.getElementById("Pasword");
+        if(Pasword.value.length == 0){
+            Pasword.className = "loi";
+            loi += "Pasword không được bỏ trống<br>";
+        } else if(Pasword.value.length <7){
+            hoten.className = "loi";
+            loi += "Pasword phải hơn 7 ký tự<br>";
+        }else {
+            email.className = "txt";
+        }
+        // kiểm tra PaswordConfirm
+        var PaswordConfirm = document.getElementById("PaswordConfirm");
+        if(PaswordConfirm.value.length == 0){
+            PaswordConfirm.className = "loi";
+            loi += "Pasword không được bỏ trống<br>";
+        } else if(Pasword.value !== PaswordConfirm.value) {
+            Pasword.className = "loi";
+            PaswordConfirm.className = "loi";
+            loi += "Pasword phải trùng nhau <br>";
+        }else {
+            email.className = "txt";
+        }
+
+        // kiểm tra giới tính
+        var phai = document.getElementsByName("phai");
+        var fs1 = document.getElementById("fs1");
+        var gtChon = false;
+        for(var i = 0; i < phai.length; i++) {
+            if(phai[i].checked) {
+                gtChon = true;
+                break;
+            }
+        }
+        if(!gtChon) {
+            fs1.className = "loi-fieldset";
+            loi += "Vui lòng chọn giới tính<br>";
+        } else {
+            fs1.className = "";
+        }
+
+
+        // kiểm tra sở thích
+        var st = document.getElementsByName("st");
+        var fs2 = document.getElementById("fs2");
+        var stChon = false;
+        for(var i = 0; i < st.length; i++) {
+            if(st[i].checked) {
+                stChon = true;
+                break;
+            }
+        }
+        if(!stChon) {
+            fs2.className = "loi-fieldset";
+            loi += "Vui lòng chọn ít nhất một sở thích<br>";
+        }else {
+            fs2.className = "";
+        }
+
+        // kiểm tra quốc tịch
+        var quoctich = document.getElementById("quoctich");
+        if(quoctich.value == "0") {
+            quoctich.className = "loi";
+            loi += "Vui lòng chọn quốc tịch<br>";
+        } else {
+            quoctich.className = "txt";
+        }
+
+        // hiển thị lỗi hoặc thông báo đăng ký thành công
+        var baoloi = document.getElementById("baoloi");
+        if(loi.length > 0) {
+            baoloi.innerHTML = loi;
+            return false;
+        } else {
+            baoloi.innerHTML = "";
+            alert("Đăng ký thành công!");
+            return true;
+        }
+    }
     </script>
 </html>

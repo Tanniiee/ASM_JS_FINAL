@@ -6,6 +6,13 @@
     <title>LOGIN</title>
     <link rel="stylesheet" href="css/login.css">
 </head>
+<style>
+    #form1 #baoloi{ margin: 0px auto; color: red}
+
+#form1 .loi {
+    border:1px solid red;  background-color:yellow;
+}
+</style>
 <body>
     <!-- header -->
     <header>
@@ -39,16 +46,15 @@
           <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
         </div>
            </header>
-
     <div class="container">
         <div class="main-box">
             <h1>Log In</h1>
-            <form action="">
+            <form id="form1" action="">
                 <div class="input-box">
                     <span class="icon">
                         <i class="fa-solid fa-envelope"></i>
                     </span>
-                    <input type="email" required>
+                    <input id="Email" type="email" required>
                     <label>Email</label>
                 </div>
 
@@ -56,20 +62,21 @@
                 <span class="icon">
                     <i class="fa-solid fa-lock"></i>
                 </span>
-                <input  type="password" required>
-                <label>Pasword</label>
+                <input id="Pasword" type="password" required>
+                <label>Password</label>
             </div>
 
             <div class="check">
                 <label> <input type="checkbox">Remember me</label>
                 <a href="#">Forget Password</a>
             </div>
-
-            <button type="submit" class="btn">Login</button>
+            <div id="baoloi"></div>
+            <button type="button" onclick="return kiemtra();" class="btn">Login</button>
 
             <div class="register">
                 <p>
                     Don't have an account?
+                    
                     <a href="signUp.html" class="register-link">Sign Up!</a>
                 </p>
             </div>
@@ -81,11 +88,46 @@
 </body>
 <script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
 <script src="jquery-3.7.1.min.js"></script>
-  <script>
+<script>
     $(document).ready(function() {
-    $("#menu-icon").click(function() {
-        $(".navbar").toggleClass("open");
+        $("#menu-icon").click(function() {
+            $(".navbar").toggleClass("open");
+        });
     });
-    });
-    </script>
+
+    function kiemtra() {
+        var loi = "";  
+
+        // Kiểm tra email
+        var email = document.getElementById("Email");
+        if (email.value.length == 0) {
+            email.className = "loi";
+            loi += "Email không được bỏ trống<br>";
+        } else {
+            email.className = "txt";
+        }
+
+        // Kiểm tra Password
+        var password = document.getElementById("Pasword");
+        if (password.value.length == 0) {
+            password.className = "loi";
+            loi += "Password không được bỏ trống<br>";
+        } else if (password.value.length < 7) {
+            password.className = "loi";
+            loi += "Password phải có ít nhất 7 ký tự<br>";
+        } else {
+            password.className = "txt";
+        }
+
+        var baoloi = document.getElementById("baoloi");
+        if (loi.length > 0) {
+            baoloi.innerHTML = loi;
+            return false;
+        } else {
+            baoloi.innerHTML = "";
+            alert("Đăng nhập thành công!");
+            return true;
+        }
+    }
+</script>
 </html>

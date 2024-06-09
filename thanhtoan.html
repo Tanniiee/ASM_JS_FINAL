@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<style>
+.loi {
+            color: red;
+        }
+</style>
+<body>
+    <!-- header -->
+    <header>
+        <a href="#" class="logo">
+          <i class="fa-solid fa-paw"></i> T-<span>Pets</span> 
+        </a>
+        
+        <ul class="navbar">
+            <li><a href="index.html" >
+                <i class="fa-solid fa-house"></i>HOME</a>
+            </li>   
+            <li><a href="discount.html" >
+              <i class="fa-solid fa-tag"></i>DISCOUNT</a>
+            </li>
+            <li><a href="product.html" >
+              <i class="fa-brands fa-opensuse"></i> PRODUCTS  </a>
+            </li>
+            <li><a href="connect.html" >
+                <i class="fa-regular fa-envelope"></i>CONNECT</a>
+            </li>
+            
+          </ul>
+         
+        <div class="h-right">
+          <!-- Search buton -->
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          <!-- login button -->
+          <a href="login.html"> <i class="fa-regular fa-user"></i></a>
+          <!-- Theme button -->
+          <a href="#"><i class="fa-solid fa-bag-shopping"></i></a>
+          <div class="bx bx-menu" id="menu-icon"><i class="fa-solid fa-bars"></i></div>
+        </div>
+           </header>
+    <div class="container">
+        <div class="main-box">
+            <h1>THANH TOÁN QUA THẺ</h1>
+    <form id="form1" onsubmit="return kiemtra()">
+        <div class="input-box">
+            <span class="icon">
+            </span>
+            <input id="hoten" type="text" required>
+            <label>Họ và tên</label>
+        </div>
+        <div class="input-box">
+            <span class="icon">
+            </span>
+            <input id="sothe" name="sothe" type="text" required>
+            <label>Số thẻ</label>
+        </div>
+        
+        <label for="nganhang">Ngân hàng:</label>
+        <select style="margin-bottom: 20px;" id="nganhang" name="nganhang">
+            <option value="">Chọn ngân hàng</option>
+            <option value="TP Bank">TP Bank</option>
+            <option value="Vietcombank">Vietcombank</option>
+            <option value="Kien Long">Kiên Long</option>
+        </select><br><br>
+        
+        <label>Loại thẻ:</label>
+        <input style="margin-bottom: 20px;" type="radio" id="visa" name="loaithe" value="Visa">
+        <label for="visa">Visa</label>
+        <input type="radio" id="credit" name="loaithe" value="Credit">
+        <label for="credit">Credit</label><br><br>
+        <p id="loi" class="loi"></p>
+        <button type="button" class="btn" value="Thực hiện" onclick="kiemtra()">Thanh Toán</button>
+        
+    </form>
+        </div>
+    </div>
+
+   
+</body>
+<script src="https://kit.fontawesome.com/1c2be09150.js" crossorigin="anonymous"></script>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#menu-icon").click(function() {
+            $(".navbar").toggleClass("open");
+        });
+    });
+
+    function kiemtra() {
+    var hoten = document.getElementById("hoten").value;
+    var sothe = document.getElementById("sothe").value;
+    var nganhang = document.getElementById("nganhang").value;
+    var visaChecked = document.getElementById("visa").checked;
+    var creditChecked = document.getElementById("credit").checked;
+    var loi = document.getElementById("loi");
+    loi.innerHTML = ""; // Xóa thông báo lỗi cũ
+
+    // Kiểm tra họ tên
+    if (hoten.length < 8) {
+        loi.innerHTML = "Họ tên phải dài ít nhất 8 ký tự.";
+        return false;
+    }
+
+    // Kiểm tra số thẻ
+    if (sothe.length !== 12) {
+        loi.innerHTML = "Số thẻ phải có đúng 12 ký tự.";
+        return false;
+    }
+
+    // Kiểm tra ngân hàng
+    if (nganhang === "") {
+        loi.innerHTML = "Phải chọn 1 ngân hàng.";
+        return false;
+    }
+
+    // Kiểm tra loại thẻ
+    if (!visaChecked && !creditChecked) {
+        loi.innerHTML = "Phải chọn 1 loại thẻ.";
+        return false;
+    }
+
+    alert("Chúc mừng bạn đặt hàng thành công");
+    return true; // Dữ liệu hợp lệ, cho phép submit form
+}
+
+</script>
+</html>

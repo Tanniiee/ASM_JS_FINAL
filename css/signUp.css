@@ -19,8 +19,8 @@ body{
 .container{
     position: relative;
     width: 100%;
-    max-width: 450px;
-    height: 530px;
+    max-width: 600px;
+    height: auto;
     background-color: transparent;
     border-radius: 20px;
     border: 2px solid rgba(257, 257, 257, 0.1);
